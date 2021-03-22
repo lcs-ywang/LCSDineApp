@@ -42,6 +42,6 @@ class ApiData: ObservableObject {
 }
 
 
-// Create a test store for use with Xcode previews
+
 let testStore = ApiData()
-sleep(10)
+sleep(10) // Wait for 10 second to see if it can donwload data
