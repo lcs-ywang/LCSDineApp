@@ -5,7 +5,7 @@ struct KKK : Codable {
 }
 
 struct DineDetail : Codable{
-    var id:String
+    var id:Int
     var house:String
     var date:String
     var brLocation:String
@@ -18,7 +18,7 @@ struct DineDetail : Codable{
 
 class ApiData: ObservableObject {
     
-    @Published var goFuckYourself:[DineDetail] = [DineDetail(id: "", house: "", date: "", brLocation: "", brTime: "", luLocation: "", luTime: "", diLocation: "", diTime: "")]
+    @Published var goFuckYourself:[DineDetail] = [DineDetail(id: 0, house: "", date: "", brLocation: "", brTime: "", luLocation: "", luTime: "", diLocation: "", diTime: "")]
     
     init() {
         let url = URL(string: "https://api.sheety.co/73a333855fd3edc50f8b28aba37efaa1/dineInOrTakeOut/list")!
