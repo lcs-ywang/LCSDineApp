@@ -13,6 +13,7 @@
 		3CF3F3A826090172009B3CDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF3F3A726090172009B3CDC /* Preview Assets.xcassets */; };
 		3CF3F3B126090268009B3CDC /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3F3B026090268009B3CDC /* HouseView.swift */; };
 		3CF3F3B826090336009B3CDC /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3F3B726090336009B3CDC /* ScheduleView.swift */; };
+		3CF3F3BB26090418009B3CDC /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3F3BA26090418009B3CDC /* Structures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		3CF3F3A926090172009B3CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF3F3B026090268009B3CDC /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		3CF3F3B726090336009B3CDC /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		3CF3F3BA26090418009B3CDC /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3CF3F3A626090172009B3CDC /* Preview Content */,
 				3CF3F3B026090268009B3CDC /* HouseView.swift */,
 				3CF3F3B726090336009B3CDC /* ScheduleView.swift */,
+				3CF3F3BA26090418009B3CDC /* Structures.swift */,
 			);
 			path = LCSDineApp;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF3F3BB26090418009B3CDC /* Structures.swift in Sources */,
 				3CF3F3B126090268009B3CDC /* HouseView.swift in Sources */,
 				3CF3F3B826090336009B3CDC /* ScheduleView.swift in Sources */,
 				3CF3F3A32609016E009B3CDC /* ContentView.swift in Sources */,
