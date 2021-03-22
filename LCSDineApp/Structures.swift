@@ -11,7 +11,7 @@ struct KKK : Codable {
     var list:[DineDetail]
 }
 
-struct DineDetail : Codable{
+struct DineDetail : Codable, Identifiable{
     var id:Int
     var house:String
     var date:String
@@ -37,8 +37,6 @@ class ApiData: ObservableObject {
             
             if let placeholder = try? JSONDecoder().decode(KKK.self, from: data){
                 print(placeholder)
-            }else{
-                print("Nope")
             }
             
         }.resume()

@@ -1,10 +1,17 @@
+//
+//  Store.swift
+//  CourseSelectionAssistant (iOS)
+//
+//  Created by Russell Gordon on 2021-03-17.
+//
+
 import Foundation
 
 struct KKK : Codable {
     var list:[DineDetail]
 }
 
-struct DineDetail : Codable{
+struct DineDetail : Codable, Identifiable{
     var id:Int
     var house:String
     var date:String
@@ -30,8 +37,6 @@ class ApiData: ObservableObject {
             
             if let placeholder = try? JSONDecoder().decode(KKK.self, from: data){
                 print(placeholder)
-            }else{
-                print("Nope")
             }
             
         }.resume()
@@ -41,7 +46,3 @@ class ApiData: ObservableObject {
     }
 }
 
-
-
-let testStore = ApiData()
-sleep(10) // Wait for 10 second to see if it can donwload data
