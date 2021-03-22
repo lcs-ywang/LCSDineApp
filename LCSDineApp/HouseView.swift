@@ -14,7 +14,10 @@ struct HouseView: View {
         VStack{
             List{
                 ForEach(0..<houses.count){ num in
-                    Text("\(houses[num])")
+                    
+                    NavigationLink(destination: ScheduleView()){
+                        Text("\(houses[num])")
+                    }
                 }
             }
             .navigationBarTitle("Houses")
