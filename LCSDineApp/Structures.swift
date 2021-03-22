@@ -49,6 +49,3 @@ class ApiData: ObservableObject {
 }
 
 
-
-let testStore = ApiData()
-sleep(10) // Wait for 10 second to see if it can donwload data
