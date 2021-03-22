@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct DineDetail : Codable, Identifiable{
-    var id:String
+struct KKK : Codable {
+    var list:[DineDetail]
+}
+
+struct DineDetail : Codable{
+    var id:Int
     var house:String
     var date:String
     var brLocation:String
@@ -21,22 +25,30 @@ struct DineDetail : Codable, Identifiable{
 
 class ApiData: ObservableObject {
     
-    @Published var goFuckYourself:[DineDetail] = [DineDetail(id: "", house: "", date: "", brLocation: "", brTime: "", luLocation: "", luTime: "", diLocation: "", diTime: "")]
+    @Published var goFuckYourself:[DineDetail] = [DineDetail(id: 0, house: "", date: "", brLocation: "", brTime: "", luLocation: "", luTime: "", diLocation: "", diTime: "")]
     
     init() {
         let url = URL(string: "https://api.sheety.co/73a333855fd3edc50f8b28aba37efaa1/dineInOrTakeOut/list")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        print(url)
         
-        // 2. Run the request and process the response
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                return
+            }
+            
+            if let placeholder = try? JSONDecoder().decode(KKK.self, from: data){
+                print(placeholder)
+            }else{
+                print("Nope")
+            }
+            
         }.resume()
+        
+        
+        print("Hello")
     }
 }
 
 
-// Create a test store for use with Xcode previews
+
 let testStore = ApiData()
+sleep(10) // Wait for 10 second to see if it can donwload data
