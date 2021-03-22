@@ -1,13 +1,10 @@
-//
-//  Store.swift
-//  CourseSelectionAssistant (iOS)
-//
-//  Created by Russell Gordon on 2021-03-17.
-//
-
 import Foundation
 
-struct DineDetail : Codable, Identifiable{
+struct KKK : Codable {
+    var list:[DineDetail]
+}
+
+struct DineDetail : Codable{
     var id:String
     var house:String
     var date:String
@@ -25,18 +22,26 @@ class ApiData: ObservableObject {
     
     init() {
         let url = URL(string: "https://api.sheety.co/73a333855fd3edc50f8b28aba37efaa1/dineInOrTakeOut/list")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        print(url)
         
-        // 2. Run the request and process the response
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                return
+            }
+            
+            if let placeholder = try? JSONDecoder().decode(KKK.self, from: data){
+                print(placeholder)
+            }else{
+                print("Nope")
+            }
+            
         }.resume()
+        
+        
+        print("Hello")
     }
 }
 
 
 // Create a test store for use with Xcode previews
 let testStore = ApiData()
+sleep(10)
