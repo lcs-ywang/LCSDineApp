@@ -12,7 +12,7 @@ struct ContentView: View {
         NavigationView{
             List{
                 Group{
-                    NavigationLink(destination: Text("Hello World")){
+                    NavigationLink(destination: HouseView()){
                         Text("Link One")
                     }
                 }
